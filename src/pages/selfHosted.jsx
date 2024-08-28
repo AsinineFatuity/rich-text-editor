@@ -17,6 +17,7 @@ export default function SelfHosted() {
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
+          width: 1000,
           menubar: false,
           plugins: [
             'anchor', 'preview', 'autolink', 'charmap', 'codesample', 'image', 'link', 
