@@ -19,3 +19,11 @@ export default function CloudHosted() {
     />
   );
 }
+
+// Hello {tenant_name}. I want to welcome you to my property {property_name}.
+
+// Signed,
+
+// ALM Properties,
+
+// {date}
