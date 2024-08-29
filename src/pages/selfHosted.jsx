@@ -60,7 +60,7 @@ export default function SelfHosted() {
           initialValue={defaultText}
           init={{
             height: 500,
-            menubar: true,
+            menubar: false,
             statusbar: false,
             promotion: false,
             setup: (editor) => {
