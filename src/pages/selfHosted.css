@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust gap as needed */
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 20px; /* Adjust gap as needed */
+  }
+  
+  .main-content .tox-tinymce {
+    flex: 6; /* Adjust the width ratio between editor and card */
+  }
+  
+  .main-content .card {
+    flex: 1; /* Adjust the width ratio between editor and card */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #333;
+  }
+  
+  .save-button {
+    margin-top: 10px;
+  }
+  
+  
