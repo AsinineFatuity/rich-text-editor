@@ -5,7 +5,7 @@ export default function CloudHosted() {
       apiKey='d43hhoqmvddydtyrsce769ptcb1sj3fgs4jis64fwxlq67xg'
       init={{
         selector: 'textarea',
-        plugins: 'anchor preview autolink charmap codesample image link lists searchreplace table wordcount checklist casechange export pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tinycomments tableofcontents  mergetags autocorrect typography inlinecss',
+        plugins: 'anchor preview autolink charmap codesample exportpdf image link lists searchreplace table wordcount checklist casechange export pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tinycomments tableofcontents  mergetags autocorrect typography inlinecss',
         toolbar: 'preview undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',
@@ -20,10 +20,3 @@ export default function CloudHosted() {
   );
 }
 
-// Hello {tenant_name}. I want to welcome you to my property {property_name}.
-
-// Signed,
-
-// ALM Properties,
-
-// {date}
