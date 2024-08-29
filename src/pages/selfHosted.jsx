@@ -11,7 +11,6 @@ export default function SelfHosted() {
     }
   };
   const downloadDocument = async () => {
-    const htmlToDocx = await import('html-to-docx');
     if (editorRef.current) {
       const content = editorRef.current.getContent();
 
@@ -29,17 +28,9 @@ export default function SelfHosted() {
         </html>
       `;
 
-      // Convert HTML to .docx format
-      const docxBlob = await htmlToDocx(contentHtml, null, {
-        orientation: 'portrait',
-        margins: { top: 720, right: 720, bottom: 720, left: 720 },
-      });
-
-      // Create a download link and trigger it
-      const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(docxBlob);
-      downloadLink.download = 'document.docx';
-      downloadLink.click();
+      //send this to backend  for conversion then returned to frontend
+      // we will interpolate before we send
+      console.log(`The HTML will be sent to backend: ${contentHtml}`)
     }
   };
   const [valuesToInterpolate, setValuesToInterpolate] = useState({
