@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import "./selfHosted.css"
+import _ from 'lodash'
 export default function SelfHosted() {
   const editorRef = useRef(null);
   const log = () => {
@@ -43,12 +44,13 @@ export default function SelfHosted() {
   };
   const [valuesToInterpolate, setValuesToInterpolate] = useState({
     tenant_name: "John Doe",
-    date: new Date().toDateString(),
+    today_date: new Date().toDateString(),
     property_name: "Mwabe House",
     unit: "DE3",
   });
+  const [validVariables, setValidVariables] = useState(['tenant_name','today_date', 'property_name','unit'])
   const [defaultText, setDefaultText] = useState(
-    "<div><div>Hello {tenant_name}. I want to welcome you to my property {property_name}.</div><br><div>Signed,</div><br><div>ALM Properties,</div><br><div>{date}</div></div>"
+    "<div><div>Hello {tenant_name}. I want to welcome you to my property {property_name}.</div><br><div>Signed,</div><br><div>ALM Properties,</div><br><div>{today_date}</div></div>"
   );
   const interpolateValues = (content) => {
     let interpolatedContent = content.replace(
@@ -113,15 +115,15 @@ export default function SelfHosted() {
           }}
         />
         <div className="card">
-          <h3>Variables</h3>
+          <h5>Valid Variables</h5>
           <ul>
-            <li>Variable 1</li>
-            <li>Variable 2</li>
-            <li>Variable 3</li>
+            {validVariables.map( (variable, index)=> (
+              <li key={index}><code>{variable}</code></li>
+            ))}
           </ul>
         </div>
       </div>
-      <button className="save-button" onClick={log}>Save Template</button>
+      <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
     </div>
   );
 }
