@@ -9,7 +9,8 @@ export default function TenantEditDocument() {
   const editorRef = useRef(null);
   const log = () => {
     if (editorRef.current) {
-      console.log(editorRef.current.getContent());
+        let interpolatedContent = interpolateValues(editorRef.current.getContent());
+      console.log(interpolatedContent);
     }
   };
   const navigate = useNavigate();
