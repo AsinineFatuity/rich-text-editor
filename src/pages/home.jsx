@@ -6,7 +6,8 @@ export function Home() {
   return (
     <div>
       <button onClick={()=>navigate(url.selfhosted)}>Landlord Document</button>
-        <button onClick={()=>navigate(url.tenantEdit)}>Tenant Document</button>
+      &nbsp; &nbsp;
+      <button onClick={()=>navigate(url.tenantEdit)}>Tenant Document</button>
     </div>
   );
 }
