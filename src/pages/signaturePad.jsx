@@ -14,6 +14,7 @@ const SignaturePad = () => {
     // Save the signature as a data URL
     const dataUrl = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
     setImageUrl(dataUrl);
+    console.log(dataUrl);
     // You can send this data URL to your backend or use it as needed
   };
 
