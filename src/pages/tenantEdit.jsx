@@ -10,29 +10,7 @@ export default function TenantEditDocument() {
       console.log(editorRef.current.getContent());
     }
   };
-  const downloadDocument = async () => {
-    if (editorRef.current) {
-      const content = editorRef.current.getContent();
 
-      // Wrap the content in a basic HTML template for Word
-      const contentHtml = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Document</title>
-        </head>
-        <body>
-          ${content}
-        </body>
-        </html>
-      `;
-
-      //send this to backend  for conversion then returned to frontend
-      // we will interpolate before we send
-      console.log(`The HTML will be sent to backend: ${contentHtml}`)
-    }
-  };
   const [valuesToInterpolate, setValuesToInterpolate] = useState({
     tenant_name: "John Doe",
     today_date: new Date().toDateString(),
@@ -95,10 +73,6 @@ export default function TenantEditDocument() {
                   previewWindow.document.close();
                 },
               });
-              editor.ui.registry.addButton('download', {
-                text: 'Download',
-                onAction: downloadDocument,
-              });
             },
             plugins: [
               'anchor',
@@ -130,6 +104,26 @@ export default function TenantEditDocument() {
           </ul>
         </div>
       </div>
+      <form className="side-content">
+        <h5>Enter The Following Values To Complete Document</h5>
+        {validVariables.map((variable, index) => (
+            <div key={index} className="form-group">
+                <label htmlFor={variable}>{_.startCase(variable)}</label>&nbsp;
+                <input
+                type="text"
+                id={variable}
+                name={variable}
+                value={valuesToInterpolate[variable]}
+                onChange={(e) => {
+                    setValuesToInterpolate({
+                    ...valuesToInterpolate,
+                    [variable]: e.target.value,
+                    });
+                }}
+                />
+            </div>
+            ))}
+      </form>
       <button className="save-button" onClick={previewTenantDocument}>Preview Document</button>
       <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
     </div>
