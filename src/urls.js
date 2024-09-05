@@ -1,5 +1,6 @@
 export const url = {
     cloudHosted:"/cloud-hosted",
-    selfhosted:"/self-hosted",
-    tenantEdit:"/tenant-edit"
+    selfhosted:"/landlord-edit",
+    tenantEdit:"/tenant-edit",
+    home:"/",
 }
