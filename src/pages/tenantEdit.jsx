@@ -50,6 +50,18 @@ export default function TenantEditDocument() {
     );
     return interpolatedContent;
   };
+
+  const previewTenantDocument = () => {
+    const content = editorRef.current.getContent();
+    const interpolatedContent = interpolateValues(content);
+    const previewWindow = window.open(
+      '',
+      '_blank',
+      'width=800,height=600'
+    );
+    previewWindow.document.write(interpolatedContent);
+    previewWindow.document.close();
+  }
   return (
     <div className="container">
       <div className="main-content">
@@ -118,6 +130,7 @@ export default function TenantEditDocument() {
           </ul>
         </div>
       </div>
+      <button className="save-button" onClick={previewTenantDocument}>Preview Document</button>
       <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
     </div>
   );
