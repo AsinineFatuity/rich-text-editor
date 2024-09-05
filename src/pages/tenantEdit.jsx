@@ -96,15 +96,7 @@ export default function TenantEditDocument() {
           }}
         />
         <div className="card">
-          <h5>Valid Variables</h5>
-          <ul>
-            {validVariables.map( (variable, index)=> (
-              <li key={index}><code>{variable}</code></li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <form className="side-content">
+        <form className="side-content">
         <h5>Enter The Following Values To Complete Document</h5>
         {validVariables.map((variable, index) => (
             <div key={index} className="form-group">
@@ -124,6 +116,9 @@ export default function TenantEditDocument() {
             </div>
             ))}
       </form>
+        </div>
+      </div>
+      
       <button className="save-button" onClick={previewTenantDocument}>Preview Document</button>
       <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
     </div>
