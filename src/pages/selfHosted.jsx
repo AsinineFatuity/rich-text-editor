@@ -115,6 +115,7 @@ export default function SelfHosted() {
               <li key={index}><code>{variable}</code></li>
             ))}
           </ul>
+          <br />
           <button onClick={()=>{navigate(url.tenantEdit)}}>Go To Tenant</button>
         </div>
       </div>

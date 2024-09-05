@@ -120,12 +120,14 @@ export default function TenantEditDocument() {
             </div>
             ))}
       </form>
+      <br />
       <button onClick={()=>{navigate(url.selfhosted)}}>Go To Landlord</button>
         </div>
       </div>
-      
-      <button className="save-button" onClick={previewTenantDocument}>Preview Document</button>
-      <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
+      <div className="save-button">
+        <button onClick={previewTenantDocument}>Preview Document</button> &emsp;
+        <button onClick={log}>Save Template (Check Console Log)</button>
+      </div>
     </div>
   );
 }
