@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import { url } from "../urls";
 import { Editor } from "@tinymce/tinymce-react";
 import "./selfHosted.css"
 import _ from 'lodash'
@@ -10,6 +12,7 @@ export default function TenantEditDocument() {
       console.log(editorRef.current.getContent());
     }
   };
+  const navigate = useNavigate();
 
   const [valuesToInterpolate, setValuesToInterpolate] = useState({
     tenant_name: "John Doe",
@@ -116,6 +119,7 @@ export default function TenantEditDocument() {
             </div>
             ))}
       </form>
+      <button onClick={()=>{navigate(url.selfhosted)}}>Go To Landlord</button>
         </div>
       </div>
       

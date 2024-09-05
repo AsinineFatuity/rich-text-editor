@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import { url } from "../urls";
 import { Editor } from "@tinymce/tinymce-react";
 import "./selfHosted.css"
 import _ from 'lodash'
@@ -10,6 +12,7 @@ export default function SelfHosted() {
       console.log(editorRef.current.getContent());
     }
   };
+  const navigate = useNavigate();
   const downloadDocument = async () => {
     if (editorRef.current) {
       const content = editorRef.current.getContent();
@@ -112,6 +115,7 @@ export default function SelfHosted() {
               <li key={index}><code>{variable}</code></li>
             ))}
           </ul>
+          <button onClick={()=>{navigate(url.tenantEdit)}}>Go To Tenant</button>
         </div>
       </div>
       <button className="save-button" onClick={log}>Save Template (Check Console Log)</button>
