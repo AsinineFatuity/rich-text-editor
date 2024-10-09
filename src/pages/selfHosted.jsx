@@ -38,13 +38,14 @@ export default function SelfHosted() {
   };
   const [valuesToInterpolate, setValuesToInterpolate] = useState({
     tenant_name: "John Doe",
-    today_date: new Date().toDateString(),
+    date_today: new Date().toDateString(),
     property_name: "Mwabe House",
     unit: "DE3",
+    landlord_signature: "<img src='https://imgbly.com/ib/l9yTdKPPRE.png' width='40' height='13' alt='landlordSignature'>",
   });
-  const [validVariables, setValidVariables] = useState(['tenant_name','today_date', 'property_name','unit'])
+  const [validVariables, setValidVariables] = useState(['tenant_name','date_today', 'property_name','unit', 'landlord_signature'])
   const [defaultText, setDefaultText] = useState(
-    "<div><div>Hello {tenant_name}. I want to welcome you to my property {property_name}.</div><br><div>Signed,</div><br><div>ALM Properties,</div><br><div>{today_date}</div></div>"
+    "<div><div>Hello {tenant_name}. I want to welcome you to my property {property_name}.</div><br><div>Signed,</div><br><div>ALM Properties,</div><div>{landlord_signature}</div><br><div>{date_today}</div></div>"
   );
   const interpolateValues = (content) => {
     let interpolatedContent = content.replace(
@@ -98,12 +99,13 @@ export default function SelfHosted() {
               'table',
               'wordcount',
               'help',
+              'image'
             ],
             toolbar:
               'previewCustom download undo redo | blocks fontfamily fontsize | ' +
               'bold italic underline forecolor | alignleft aligncenter ' +
               'alignright alignjustify | bullist numlist outdent indent | ' +
-              'removeformat charmap | help | link table',
+              'removeformat charmap | help | link table image',
             content_style:
               'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
           }}
