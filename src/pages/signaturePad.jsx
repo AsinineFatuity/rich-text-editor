@@ -11,11 +11,21 @@ const SignaturePad = () => {
   };
 
   const save = () => {
-    // Save the signature as a data URL
+    // Save the signature as a data URL (base64 encoded string)
     const dataUrl = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
     setImageUrl(dataUrl);
-    console.log(dataUrl);
-    // You can send this data URL to your backend or use it as needed
+    // console.log(dataUrl);
+    const blob = dataURLtoBlob(dataUrl); // Convert data URL to Blob and send this to the backend like we do for file upload
+    console.log(blob);
+  };
+
+  const dataURLtoBlob = (dataURL) => {
+    const binary = atob(dataURL.split(',')[1]);
+    const array = [];
+    for (let i = 0; i < binary.length; i++) {
+      array.push(binary.charCodeAt(i));
+    }
+    return new Blob([new Uint8Array(array)], { type: 'image/png' });
   };
 
   
