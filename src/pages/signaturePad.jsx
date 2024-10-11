@@ -35,7 +35,8 @@ const SignaturePad = () => {
       <SignatureCanvas
         ref={sigCanvas}
         penColor="black"
-        canvasProps={{background:'white', width: 500, height: 200, className: 'sigCanvas' }}
+        backgroundColor='white'
+        canvasProps={{width: 500, height: 200, className: 'sigCanvas' }}
       />
       <button onClick={clear}>Clear</button> &nbsp; &nbsp;
       <button onClick={save}>Save</button>
