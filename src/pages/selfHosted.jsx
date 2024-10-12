@@ -41,7 +41,7 @@ export default function SelfHosted() {
     date_today: new Date().toDateString(),
     property_name: "Mwabe House",
     unit: "DE3",
-    landlord_signature: "<img src='https://imgbly.com/ib/l9yTdKPPRE.png' width='40' height='13' alt='landlordSignature'>",
+    landlord_signature: "<img src='https://imgbly.com/ib/S7zLjrWXcN.png' width='40' height='13' alt='testSignature'>",
   });
   const [validVariables, setValidVariables] = useState(['tenant_name','date_today', 'property_name','unit', 'landlord_signature'])
   const [defaultText, setDefaultText] = useState(
