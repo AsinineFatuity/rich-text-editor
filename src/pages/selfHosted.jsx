@@ -42,8 +42,11 @@ export default function SelfHosted() {
     property_name: "Mwabe House",
     unit: "DE3",
     landlord_signature: "<img src='https://imgbly.com/ib/S7zLjrWXcN.png' width='40' height='13' alt='testSignature'>",
+    company_logo:"<img src='https://imgbly.com/ib/tm5jP4B8wt.png' width='100' height='90' alt='testLogo'>",
+    company_name:"Eden Ville Properties"
+
   });
-  const [validVariables, setValidVariables] = useState(['tenant_name','date_today', 'property_name','unit', 'landlord_signature'])
+  const [validVariables, setValidVariables] = useState(Object.keys(valuesToInterpolate))
   const [defaultText, setDefaultText] = useState(
     "<div><div>Hello {tenant_name}. I want to welcome you to my property {property_name}.</div><br><div>Signed,</div><br><div>ALM Properties,</div><div>{landlord_signature}</div><br><div>{date_today}</div></div>"
   );
